@@ -13,7 +13,7 @@ function PageReturn() {
   // ฟังก์ชันดึงข้อมูลคำร้องทั้งหมด
   const fetchBorrowRequests = async () => {
     try {
-      const response = await fetch('http://10.198.200.35:5002/return');
+      const response = await fetch('http://localhost:5002/return');
       const data = await response.json();
       if (response.ok) {
         setBorrowRequests(data);

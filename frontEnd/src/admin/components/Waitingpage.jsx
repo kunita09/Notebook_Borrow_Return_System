@@ -15,7 +15,7 @@ function Waitingpage() {
    // ฟังก์ชันดึงข้อมูลคำร้องทั้งหมด
   const fetchBorrowRequests = async () => {
     try {
-      const response = await fetch('http://10.198.200.35:5002/waiting');
+      const response = await fetch('http://localhost:5002/waiting');
       const data = await response.json();
       if (response.ok) {
         setBorrowRequests(data);
@@ -131,7 +131,7 @@ function Waitingpage() {
                             <td className="py-2 text-center px-2 ">
                             {borrow.document ? (
                               <a
-                                href={`http://10.198.200.35:5002${borrow.document}`}   // เชื่อมโยงไปยัง document_path
+                                href={`http://localhost:5002${borrow.document}`}   // เชื่อมโยงไปยัง document_path
                                 target="_blank"  // เปิดใน tab ใหม่
                                 rel="noopener noreferrer"
                                 className="text-blue-500 hover:underline"

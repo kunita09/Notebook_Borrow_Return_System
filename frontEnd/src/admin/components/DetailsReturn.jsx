@@ -16,7 +16,7 @@ function DetailsReturn() {
         console.log("borrowId from useParams:", borrowId); // เช็คค่าของ borrowId
         const fetchBorrowData = async () => {
             try {
-                const response = await fetch(`http://10.198.200.35:5002/ApproveRequestDT?borrow_id=${borrowId}`);
+                const response = await fetch(`http://localhost:5002/ApproveRequestDT?borrow_id=${borrowId}`);
                 const data = await response.json();
                 console.log('API response:', data); // ตรวจสอบข้อมูลที่ได้จาก API
 
@@ -220,7 +220,7 @@ function DetailsReturn() {
                                         <div className="pt-7 px-4 text-center" >
                                             {borrowData.document ? (
                                                 <a
-                                                    href={`http://10.198.200.35:5002${borrowData.document}`}   // เชื่อมโยงไปยัง document_path
+                                                    href={`http://localhost:5002${borrowData.document}`}   // เชื่อมโยงไปยัง document_path
                                                     target="_blank"  // เปิดใน tab ใหม่
                                                     rel="noopener noreferrer"
                                                     className="text-blue-500 hover:underline"

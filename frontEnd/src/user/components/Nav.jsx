@@ -21,7 +21,7 @@ function Nav() {
     }
 
     try {
-      const response = await fetch(`http://10.198.200.35:5002/borrowStuData?stu_email=${stuEmail}`);
+      const response = await fetch(`http://localhost:5002/borrowStuData?stu_email=${stuEmail}`);
       const data = await response.json();
       if (response.ok && data.length > 0) {
         setFirstName(data[0].stu_fname);

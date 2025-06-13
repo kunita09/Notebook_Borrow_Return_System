@@ -14,7 +14,7 @@ function StuHome() {
   useEffect(() => {
     const fetchBorrowHistory = async () => {
       try {
-        const response = await fetch(`http://10.198.200.35:5002/reqHistory?stu_email=${stuEmail}`);
+        const response = await fetch(`http://localhost:5002/reqHistory?stu_email=${stuEmail}`);
         const data = await response.json();
         setBorrowHistory(data);
       } catch (error) {
@@ -25,7 +25,7 @@ function StuHome() {
     };
     const fetchFacultyData = async () => {
       try {
-        const response = await fetch(`http://10.198.200.35:5002/StuHome?stu_email=${stuEmail}`);
+        const response = await fetch(`http://localhost:5002/StuHome?stu_email=${stuEmail}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -62,7 +62,7 @@ function StuHome() {
 
   const deleteRequest = async (borrow_id) => {
     try {
-      const response = await fetch('http://10.198.200.35:5002/deleteRequestStudent', {
+      const response = await fetch('http://localhost:5002/deleteRequestStudent', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

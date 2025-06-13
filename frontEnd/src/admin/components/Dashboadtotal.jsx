@@ -12,7 +12,7 @@ function Dashboadtotal() {
     const [facultyCount, setFacultyCount] = useState(0); // เก็บค่าจำนวนคณะ
 
     useEffect(() => {
-        axios.get('http://10.198.200.35:5002/report') // ใช้ URL ของ API ที่คุณต้องการดึงข้อมูล
+        axios.get('http://localhost:5002/report') // ใช้ URL ของ API ที่คุณต้องการดึงข้อมูล
             .then((response) => {
                 setTotal(response.data.total); // ตั้งค่า total
                 setRemaining(response.data.remaining); // ตั้งค่า remaining

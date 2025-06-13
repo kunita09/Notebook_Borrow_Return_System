@@ -46,7 +46,7 @@ function AddDetails() {
         }
 
         try {
-            const response = await axios.post('http://10.198.200.35:5002/laptopUpload', formDataToSend, {
+            const response = await axios.post('http://localhost:5002/laptopUpload', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

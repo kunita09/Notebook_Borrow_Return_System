@@ -10,7 +10,7 @@ function DashboardChart() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://10.198.200.35:5002/report')
+    axios.get('http://localhost:5002/report')
       .then((response) => {
         const { facultySummary } = response.data;
   

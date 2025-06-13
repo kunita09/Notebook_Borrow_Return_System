@@ -19,7 +19,7 @@ function DetailsReqadmin() {
           return;
         }
 
-        const response = await fetch(`http://10.198.200.35:5002/ApproveRequestDT?borrow_id=${borrowId}`);
+        const response = await fetch(`http://localhost:5002/ApproveRequestDT?borrow_id=${borrowId}`);
         const data = await response.json();
 
         if (response.ok && data) {

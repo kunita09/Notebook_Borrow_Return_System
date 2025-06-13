@@ -27,7 +27,7 @@ function Editforquota() {
 
     const fetchControlRequest = async () => {
         try {
-            const response = await fetch('http://10.198.200.35:5002/settingBorrowData');
+            const response = await fetch('http://localhost:5002/settingBorrowData');
             const result = await response.json();
 
             if (result.length > 0) {
@@ -53,7 +53,7 @@ function Editforquota() {
 
     const fetchFaculties = async () => {
         try {
-            const response = await fetch('http://10.198.200.35:5002/faculties');
+            const response = await fetch('http://localhost:5002/faculties');
             const result = await response.json();
             setData(result);
         } catch (error) {
@@ -72,7 +72,7 @@ function Editforquota() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://10.198.200.35:5002/insertfacultiesQuota', {
+            const response = await fetch('http://localhost:5002/insertfacultiesQuota', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ function Editforquota() {
         }
 
         try {
-            const response = await fetch('http://10.198.200.35:5002/settingBorrowData', {
+            const response = await fetch('http://localhost:5002/settingBorrowData', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ function Editforquota() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const response = await fetch('http://10.198.200.35:5002/deleteQuota', {
+                    const response = await fetch('http://localhost:5002/deleteQuota', {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ function Navadmin() {
   // ฟังก์ชันดึงข้อมูลเจ้าหน้าที่จาก API
   useEffect(() => {
     if (officerEmail) {
-      fetch(`http://10.198.200.35:5002/navOfficerData?officer_email=${officerEmail}`)
+      fetch(`http://localhost:5002/navOfficerData?officer_email=${officerEmail}`)
         .then((response) => response.json())
         .then((data) => {
           setOfficerData(data[0]); // เก็บข้อมูลเจ้าหน้าที่ตัวแรก (สมมุติว่าเราจะได้แค่ 1 ผลลัพธ์)
@@ -31,7 +31,7 @@ function Navadmin() {
   };
   const handleLogout = () => {
     localStorage.removeItem('stu_email'); // ลบข้อมูลออกจาก localStorage
-    window.location.href = 'http://10.198.200.35:5002/login'; // เปลี่ยนเส้นทางไปหน้า login
+    window.location.href = 'http://localhost:5002/login'; // เปลี่ยนเส้นทางไปหน้า login
   };
 
   if (loading) {

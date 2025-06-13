@@ -63,7 +63,7 @@ function AllNotebookDT() {
     if (!result.isConfirmed) return;
 
     try {
-      const response = await fetch("http://10.198.200.35:5002/deleteSelectedNotebooks", {
+      const response = await fetch("http://localhost:5002/deleteSelectedNotebooks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ laptop_tags: selectedNotebooks }),
@@ -107,7 +107,7 @@ function AllNotebookDT() {
     const fetchNotebookDetails = async () => {
       setLoading(true); // ตั้งค่า loading เป็น true ก่อน fetch
       try {
-        const response = await fetch('http://10.198.200.35:5002/allNotebook');
+        const response = await fetch('http://localhost:5002/allNotebook');
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(`Error fetching notebook details: ${response.status} ${errorData?.error || response.statusText}`);
@@ -154,7 +154,7 @@ function AllNotebookDT() {
   const handleStatusChange = async (e, laptop_tag) => {
     const newStatus = e.target.value;
     try {
-      const response = await fetch('http://10.198.200.35:5002/updateStatusAllNotebook', {
+      const response = await fetch('http://localhost:5002/updateStatusAllNotebook', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ laptop_tag, status: newStatus }),

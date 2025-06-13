@@ -15,7 +15,7 @@ function DashboadFilemonth({ reportRef }) {
   // ดึงข้อมูลจาก API เมื่อ component ถูก mount
   useEffect(() => {
     // ดึงข้อมูลจาก API แรก
-    fetch('http://10.198.200.35:5002/report')
+    fetch('http://localhost:5002/report')
       .then((response) => {
         if (!response.ok) {
           throw new Error('ไม่สามารถดึงข้อมูลรายงาน');
@@ -59,7 +59,7 @@ function DashboadFilemonth({ reportRef }) {
       });
   
     // ดึงข้อมูลจาก API ที่สอง (/returnLate)
-    fetch('http://10.198.200.35:5002/statusReLate')
+    fetch('http://localhost:5002/statusReLate')
       .then((response) => {
         if (!response.ok) {
           throw new Error('ไม่สามารถดึงข้อมูลรายงานการคืนเครื่อง');
@@ -110,12 +110,12 @@ function DashboadFilemonth({ reportRef }) {
       });
 
 
-      fetch('http://10.198.200.35:5002/reportFile')
+      fetch('http://localhost:5002/reportFile')
       .then((response) => response.json())
       .then((data) => setFilesReport(data))
       .catch((error) => console.error('Error fetching files:', error));
 
-      fetch('http://10.198.200.35:5002/reportFileReLate')
+      fetch('http://localhost:5002/reportFileReLate')
       .then((response) => response.json())
       .then((data) => setFilesReLate(data))
       .catch((error) => console.error('Error fetching files:', error));
@@ -124,7 +124,7 @@ function DashboadFilemonth({ reportRef }) {
   
 
 const onDownload = (fileName) => {
-  fetch(`http://10.198.200.35:5002/downloadReport/${fileName}`)
+  fetch(`http://localhost:5002/downloadReport/${fileName}`)
     .then((response) => {
       if (response.ok) {
         // ถ้าการดาวน์โหลดสำเร็จ จะเริ่มดาวน์โหลดไฟล์
@@ -211,7 +211,7 @@ const onDownload = (fileName) => {
     formData.append("file", pdfBlob, fileName);
   
     try {
-      const response = await fetch("http://10.198.200.35:5002/uploadReport", {
+      const response = await fetch("http://localhost:5002/uploadReport", {
         method: "POST",
         body: formData
       });
@@ -232,7 +232,7 @@ const onDownload = (fileName) => {
     formData.append("file", pdfBlob, fileName);
   
     try {
-      const response = await fetch("http://10.198.200.35:5002/uploadReportReLate", {
+      const response = await fetch("http://localhost:5002/uploadReportReLate", {
         method: "POST",
         body: formData
       });
@@ -427,7 +427,7 @@ const onDownload = (fileName) => {
 
 
   const onDownloadReLate = async (fileName) => {
-    fetch(`http://10.198.200.35:5002/downloadReportReLate/${fileName}`)
+    fetch(`http://localhost:5002/downloadReportReLate/${fileName}`)
       .then((response) => {
         if (response.ok) {
           return response.blob();  // ถ้าการดาวน์โหลดสำเร็จ

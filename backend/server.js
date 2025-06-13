@@ -53,7 +53,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(cors())
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://10.198.200.35:5173'], // กำหนด URL ที่อนุญาต
+  origin: ['http://localhost:5173'], //, 'http://10.198.200.35:5173' กำหนด URL ที่อนุญาต
   methods: ['GET', 'POST' ,'PUT' , 'PATCH'],
   credentials: true
 })); 
@@ -199,7 +199,7 @@ app.post('/login', (req, res) => {
         message: 'เข้าสู่ระบบสำเร็จในฐานะนักศึกษา',
         role: 'student',// เพิ่มข้อมูล role
         stu_email: email, // ส่ง stu_email กลับไป 
-        redirectUrls: `http://10.198.200.35:5002/StuHome?stu_email=${email}` // แก้ไขให้ไม่ต้องเป็น array
+        redirectUrls: `http://localhost:5002/StuHome?stu_email=${email}` // แก้ไขให้ไม่ต้องเป็น array
       });
 
     }
@@ -218,7 +218,7 @@ app.post('/login', (req, res) => {
           message: 'เข้าสู่ระบบสำเร็จในฐานะแอดมิน',
           role: 'admin', // เพิ่มข้อมูล role
           officer_email: email, // ส่ง officer_email กลับไป
-          redirectUrls: `http://10.198.200.35:5002/admin/Home?officer_email=${email}` // แก้ไขให้ไม่ต้องเป็น array
+          redirectUrls: `http://localhost:5002/admin/Home?officer_email=${email}` // แก้ไขให้ไม่ต้องเป็น array
         });
       }
 

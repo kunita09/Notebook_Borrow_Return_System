@@ -10,7 +10,7 @@ function PageOfficerlist() {
 
     const fetchOfficers = async () => {
         try {
-            const response = await fetch('http://10.198.200.35:5002/officers');
+            const response = await fetch('http://localhost:5002/officers');
             const data = await response.json();
             setOfficers(data);
         } catch (error) {
@@ -30,7 +30,7 @@ function PageOfficerlist() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const response = await fetch('http://10.198.200.35:5002/deleteOfficer', {
+                    const response = await fetch('http://localhost:5002/deleteOfficer', {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json',

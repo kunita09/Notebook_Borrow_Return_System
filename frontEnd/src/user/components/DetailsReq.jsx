@@ -10,7 +10,7 @@ function DetailsReq() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://10.198.200.35:5002/detailsReq/${borrowId}`)
+    fetch(`http://localhost:5002/detailsReq/${borrowId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("ไม่พบข้อมูลการยืม");

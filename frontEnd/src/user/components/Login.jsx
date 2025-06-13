@@ -31,7 +31,7 @@ function Login() {
       return;
     }
 
-    const url = 'http://10.198.200.35:5002/login';
+    const url = 'http://localhost:5002/login';
 
     try {
       const response = await apiFetch(url, {

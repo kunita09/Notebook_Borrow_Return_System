@@ -25,7 +25,7 @@ function Form() {
         }
     
         try {
-            const response = await fetch(`http://10.198.200.35:5002/borrowStuData?stu_email=${stuEmail}`);
+            const response = await fetch(`http://localhost:5002/borrowStuData?stu_email=${stuEmail}`);
             const data = await response.json();
             
             if (response.ok && data.length > 0) {
@@ -95,7 +95,7 @@ function Form() {
         formDataToSend.append('witness_phone', formData.witness_phone);
     
         try {
-            const response = await fetch(`http://10.198.200.35:5002/borrow`, {
+            const response = await fetch(`http://localhost:5002/borrow`, {
                 method: 'POST',
                 body: formDataToSend,
                 headers: {

@@ -20,8 +20,8 @@ function ReqHistory() {
         }
 
         const fetchBorrowHistory = async () => {
-            try {
-                const response = await fetch(`http://10.198.200.35:5002/reqHistory?stu_email=${stuEmail}`);
+            try {5002
+                const response = await fetch(`http://localhost:5002/reqHistory?stu_email=${stuEmail}`);
                 if (!response.ok) throw new Error('Failed to fetch data');
                 
                 const data = await response.json();
@@ -114,7 +114,7 @@ function ReqHistory() {
                                             <td className="py-3 px-4 text-center">
                                                 {borrow.document ? (
                                                     <a
-                                                        href={`http://10.198.200.35:5002${borrow.document}`}
+                                                        href={`http://localhost:5002${borrow.document}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className="text-blue-500 hover:underline"

@@ -12,7 +12,7 @@ function Notebooklist() {
 
   const fetchNotebookData = async () => {
     try {
-      const response = await fetch('http://10.198.200.35:5002/notebooklist');
+      const response = await fetch('http://localhost:5002/notebooklist');
       const data = await response.json();
 
       if (response.ok) {
@@ -43,7 +43,7 @@ function Notebooklist() {
     const { brand, model } = notebookToDelete;
 
     try {
-      const response = await fetch('http://10.198.200.35:5002/notebookDelete', {
+      const response = await fetch('http://localhost:5002/notebookDelete', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

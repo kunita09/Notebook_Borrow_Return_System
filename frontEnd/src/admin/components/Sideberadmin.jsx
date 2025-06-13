@@ -45,7 +45,7 @@ function Slidebaradmin() {
         // console.log("อีเมลที่ส่งไป:", email);  // ตรวจสอบค่าของ email
 
         try {
-            const response = await fetch("http://10.198.200.35:5002/checkPin", {
+            const response = await fetch("http://localhost:5002/checkPin", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ pin, email })  // ส่ง PIN และ officer_email ไปให้หลังบ้าน

@@ -34,7 +34,7 @@ function DetailsWaiting() {
 
             setIsLoading(true); // เริ่มการโหลด
             try {
-                const response = await axios.get(`http://10.198.200.35:5002/ApproveRequestDT?borrow_id=${borrowId}`);
+                const response = await axios.get(`http://localhost:5002/ApproveRequestDT?borrow_id=${borrowId}`);
                 setBorrowData(response.data);
                 setError('');
             } catch (err) {
@@ -51,7 +51,7 @@ function DetailsWaiting() {
     // ฟังก์ชันดึงข้อมูล Laptop ตาม laptop_tag
     const fetchLaptopData = async (tag) => {
         try {
-            const response = await fetch(`http://10.198.200.35:5002/laptop`, {
+            const response = await fetch(`http://localhost:5002/laptop`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ function DetailsWaiting() {
 
         setIsLoading(true);
         try {
-            const response = await fetch(`http://10.198.200.35:5002/waitingDT?borrowId=${borrowId}`, {
+            const response = await fetch(`http://localhost:5002/waitingDT?borrowId=${borrowId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -277,7 +277,7 @@ function DetailsWaiting() {
                                         <div className="pt-7 px-4 text-center" >
                                             {borrowData.document ? (
                                                 <a
-                                                    href={`http://10.198.200.35:5002${borrowData.document}`}   // เชื่อมโยงไปยัง document_path
+                                                    href={`http://localhost:5002${borrowData.document}`}   // เชื่อมโยงไปยัง document_path
                                                     target="_blank"  // เปิดใน tab ใหม่
                                                     rel="noopener noreferrer"
                                                     className="text-blue-500 hover:underline"

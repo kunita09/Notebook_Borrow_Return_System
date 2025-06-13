@@ -31,7 +31,7 @@ function EditDetailNB() {
 
     useEffect(() => {
         if (laptopTag) {
-            fetch(`http://10.198.200.35:5002/dataEditSN?laptop_tag=${laptopTag}`)
+            fetch(`http://localhost:5002/dataEditSN?laptop_tag=${laptopTag}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -115,7 +115,7 @@ function EditDetailNB() {
         updatedData.laptop_tag = laptopTag; // ต้องมี laptop_tag เสมอ
     
         axios
-            .post(`http://10.198.200.35:5002/editDetailNB`, updatedData)
+            .post(`http://localhost:5002/editDetailNB`, updatedData)
             .then((response) => {
                 console.log("Laptop details updated:", response.data);
     

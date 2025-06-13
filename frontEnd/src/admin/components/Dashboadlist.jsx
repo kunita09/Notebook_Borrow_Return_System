@@ -15,7 +15,7 @@ function Dashboardlist() {
 
     // ดึงข้อมูลจาก API เมื่อ component โหลด
     useEffect(() => {
-        axios.get('http://10.198.200.35:5002/manageByAdmin') // URL ของ API
+        axios.get('http://localhost:5002/manageByAdmin') // URL ของ API
             .then((response) => {
                 setOfficers(response.data);  // ตั้งค่า officers จากข้อมูล API
                 setFilteredOfficers(response.data); // กำหนดค่าเริ่มต้นให้ filteredOfficers

@@ -18,7 +18,7 @@ function HomeAdmin() {
 
   const fetchBorrowRequests = async () => {
     try {
-      const response = await fetch(`http://10.198.200.35:5002/ApproveRequest`);
+      const response = await fetch(`http://localhost:5002/ApproveRequest`); 
       const data = await response.json();
 
       if (!response.ok) {
@@ -39,7 +39,7 @@ function HomeAdmin() {
   const updateRequestStatus = async (borrow_id, action) => {
     try {
       const note = noteMap[borrow_id] || "";
-      const response = await fetch(`http://10.198.200.35:5002/ApproveRequest/${borrow_id}`, {
+      const response = await fetch(`http://localhost:5002/ApproveRequest/${borrow_id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -146,7 +146,7 @@ function HomeAdmin() {
                           <td className="py-2 text-center px-2 ">
                             {borrow.document ? (
                               <a
-                                href={`http://10.198.200.35:5002${borrow.document}`}   // เชื่อมโยงไปยัง document_path
+                                href={`http://localhost:5002${borrow.document}`}   // เชื่อมโยงไปยัง document_path
                                 target="_blank"  // เปิดใน tab ใหม่
                                 rel="noopener noreferrer"
                                 className="text-blue-500 hover:underline"

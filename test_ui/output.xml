@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-07T23:47:42.834061" rpa="false" schemaversion="5">
+<suite id="s1" name="Officer" source="D:\pj2\Notebook_Borrow_Return_System\test_ui\officer.robot">
+<test id="s1-t1" name="Login" line="19">
+<kw name="Login With officer">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-07T23:47:43.223832" level="INFO">Opening browser 'edge' to base url 'http://localhost:5173/'.</msg>
+<arg>${URL}</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-07T23:47:43.223324" elapsed="2.604835"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-07T23:47:45.829580" level="INFO">Typing text 'Kunita.n@kkumail.ac.th' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-07T23:47:45.828643" elapsed="0.273624"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-07T23:47:46.103272" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-06-07T23:47:46.150812" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=password</arg>
+<arg>${PASS}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-07T23:47:46.102690" elapsed="0.151030"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-07T23:47:46.254478" level="INFO">Clicking element '//*[@id="root"]/div/div/form/button'.</msg>
+<arg>//*[@id="root"]/div/div/form/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-07T23:47:46.254147" elapsed="0.102499"/>
+</kw>
+<status status="PASS" start="2025-06-07T23:47:43.222026" elapsed="3.134808"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-07T23:47:46.357320" elapsed="3.348013"/>
+</kw>
+<status status="PASS" start="2025-06-07T23:47:43.220469" elapsed="6.485370"/>
+</test>
+<status status="PASS" start="2025-06-07T23:47:42.835760" elapsed="6.871511"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Officer" id="s1" pass="1" fail="0" skip="0">Officer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -21,7 +21,7 @@ function NotebookDetail() {
 
     const fetchNotebookDetails = async (brand, model) => {
         try {
-        const response = await fetch(`http://10.198.200.35:5002/notebookdetail?brand=${brand}&model=${model}`);
+        const response = await fetch(`http://localhost:5002/notebookdetail?brand=${brand}&model=${model}`);
         const data = await response.json();
 
         if (response.ok) {
